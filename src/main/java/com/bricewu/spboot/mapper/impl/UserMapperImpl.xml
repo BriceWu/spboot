@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bricewu.spboot.mapper.UserMapper" >
+    <sql id="BASE_TABLE">
+      Person
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        id,name,age
+    </sql>
+
+    <insert id="insertUser" parameterType="com.bricewu.spboot.model.Person">
+        INSERT INTO
+        <include refid="BASE_TABLE"/>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            name,age,
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{name, jdbcType=VARCHAR},#{age, jdbcType=TINYINT},
+        </trim>
+    </insert>
+
+    <select id="selectUser" resultType="com.bricewu.spboot.model.Person">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+    </select>
+
+</mapper>

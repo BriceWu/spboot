@@ -14,6 +14,6 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
 
     public Person selectUser(int id) {
-        return userMapper.selectUser(id);
+        return userMapper.selectUser();
     }
 }
