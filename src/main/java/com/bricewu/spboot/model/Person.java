@@ -1,9 +1,11 @@
 package com.bricewu.spboot.model;
 
+import java.io.Serializable;
+
 /**
  * Create by BriceWu on 2018/7/1
  */
-public class Person {
+public class Person implements Serializable {
 
     private Integer id;
     private String name;

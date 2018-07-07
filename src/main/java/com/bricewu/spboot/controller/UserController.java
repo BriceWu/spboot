@@ -22,4 +22,9 @@ public class UserController {
     public int addUser (@RequestBody Person person){
         return userService.addUser(person);
     }
+
+    @RequestMapping("/showUsers")
+    public String showAllUser (){
+        return userService.getAllUser();
+    }
 }
