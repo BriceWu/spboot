@@ -1,4 +1,4 @@
-package com.bricewu.spboot.mapper;
+package com.bricewu.spboot.dao;
 
 import org.springframework.stereotype.Repository;
 import com.bricewu.spboot.model.Person;
@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Repository
 public interface UserMapper {
 
-    Person selectUser();
+    Person selectUser(int id);
 
     int insertUser(Person person);
 }

@@ -1,6 +1,6 @@
 package com.bricewu.spboot.service.impl;
 
-import com.bricewu.spboot.mapper.UserMapper;
+import com.bricewu.spboot.dao.UserMapper;
 import com.bricewu.spboot.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
 
     public Person selectUser(int id) {
-        return userMapper.selectUser();
+        return userMapper.selectUser(id);
     }
 
     public int addUser(Person person){

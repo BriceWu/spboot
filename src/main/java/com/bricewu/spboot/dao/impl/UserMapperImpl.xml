@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.bricewu.spboot.mapper.UserMapper" >
+<mapper namespace="com.bricewu.spboot.dao.UserMapper" >
     <sql id="BASE_TABLE">
       Person
     </sql>
@@ -20,11 +20,12 @@
         </trim>
     </insert>
 
-    <select id="selectUser" resultType="com.bricewu.spboot.model.Person">
+    <select id="selectUser" resultType="com.bricewu.spboot.model.Person" parameterType="java.lang.Integer">
         SELECT
         <include refid="BASE_COLUMN"/>
         FROM
         <include refid="BASE_TABLE"/>
+        WHERE id = #{id}
     </select>
 
 </mapper>
