@@ -6,4 +6,6 @@ import com.bricewu.spboot.model.Person;
  */
 public interface UserService{
     Person selectUser(int id);
+
+    int addUser(Person person);
 }
